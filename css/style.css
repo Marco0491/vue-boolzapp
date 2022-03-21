@@ -8,23 +8,67 @@
     background-color: #d9dbd5;
 }
 
-.my_content {
+div.my_content {
     width: 80vw;
-    min-width: 500px;
+    min-width: 550px;
     height: 95vh;
     background-color: white;
     border: 1px solid black;
 }
 
+div.my_content
 .my_left-content {
     width: 35%;
     height: 100%;
     border-right: 1px solid #d9dbd5;
 }
 
-.my_notifications {
+div.my_content-header {
+    height: 10%;
+    background-color: #eaeaea;
+}
+
+div.my_avatar {
+    width: 40px;
+    height: 40px;
+}
+
+div#user span {
+    /* font-size: 0.8rem; */
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+div#active-contact-info {
+    font-size: 0.7rem;
+    line-height: 20px;
+}
+
+div.actions
+i {
+    cursor: pointer;
+}
+
+div.my_notifications {
     height: 10%;
     background-color: #8edafc;
+}
+
+div.my_notifications
+.my_bell {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: center;
+    color: #8edafc;
+    border-radius: 50%;
+    background-color: white;
+}
+
+div.my_notifications
+.my_notifications-content {
+    font-size: 0.7rem;
 }
 
 div.input-group {
@@ -32,26 +76,47 @@ div.input-group {
 }
 
 div.input-group
-span.input-group-text {
+.input-group-text {
     cursor: pointer;
 }
 
+div#contact-list
+div.my_list-element {
+    border-bottom: 1px solid #d9dbd5;
+}
+
+div#contact-list
+div.my_list-element:hover {
+    background-color: lightgray;
+}
+
+div#contact-list
+div.my_list-element div.info {
+    font-size: 0.6rem;
+}
+
+div#contact-list
+div.my_list-element span.time {
+    font-size: 0.5rem;
+}
+
+div.my_content
 .my_right-content {
     width: 65%;
     height: 100%;
 }
 
-.my_content-header {
-    height: 10%;
-    background-color: #eaeaea;
-}
-
-.my_main-right-content {
+div.my_main-right-content {
     height: 80%;
     background-image: url(../img/mine.jpg);
 }
 
-.my_right-footer {
+div.my_right-footer {
     height: 10%;
     background-color: #f3eeea;
+}
+
+div.my_right-footer
+i {
+    cursor: pointer;
 }

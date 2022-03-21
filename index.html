@@ -28,20 +28,78 @@
                         <div class="my_content d-flex">
                             <!-- parte sinistra della pagina con avatar e nome dell'utente e lista dei contatti -->
                             <div class="my_left-content">
-                                <div class="my_content-header"></div>
-                                <div class="my_notifications"></div>
-                                <div class="input-group input-group-sm p-2">
+                                <!-- parte superiore del contenuto di sinistra con avatar e nome dell'utente -->
+                                <div class="my_content-header d-flex align-items-center justify-content-between p-3">
+                                    <div id="user" class="d-flex">
+                                        <div class="my_avatar">
+                                            <img class="img-fluid rounded-circle" :src="user.avatar" :alt="user.name">
+                                        </div>
+                                        <span class="fs-6 ms-2">{{user.name}}</span>
+                                    </div>
+                                    <div class="actions text-muted">
+                                        <i class="fa-solid fa-circle-notch"></i>
+                                        <i class="fa-solid fa-message mx-2"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                </div>
+                                <!-- sezione delle notifiche -->
+                                <div class="my_notifications d-flex align-items-center p-3">
+                                    <div class="my_bell me-2">
+                                        <i class="fa-solid fa-bell-slash"></i>
+                                    </div>
+                                    <div class="my_notifications-content d-flex flex-column">
+                                        <p class="m-0">Ricevi notifiche nuovi messaggi</p>
+                                        <a class="text-muted" href="#">Attiva notifiche Desktop</a>
+                                    </div>
+                                </div>
+                                <!-- sezione per cercare e selezionare un nuovo contatto -->
+                                <div class="input-group input-group-sm p-2 mb-2">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </span>
                                     <input type="text" class="form-control" placeholder="cerca o inizia una nuova chat">
                                 </div>
+                                <!-- lista contatti -->
+                                <div id="contact-list">
+                                    <div class="my_list-element d-flex position-relative p-2" v-for="(element, index) in contacts">
+                                        <div class="my_avatar">
+                                            <img class="img-fluid rounded-circle" :src="element.avatar" :alt="element.name">
+                                        </div>
+                                        <div class="info d-flex flex-column ms-2">
+                                            <span class="fs-6 m-0">{{element.name}}</span>
+                                            <span class="text-muted">Ultimo messaggio inviato</span>
+                                        </div>
+                                        <span class="time text-muted position-absolute top-0 end-0 p-2">12:00</span>
+                                    </div>
+                                </div>
                             </div>
                             <!-- parte destra della pagina con contatto attivo e relativa chat -->
                             <div class="my_right-content">
-                                <div class="my_content-header"></div>
+                                <!-- parte superiore del contenuto di destra con avatar e nome del contatto attivo -->
+                                <div class="my_content-header d-flex align-items-center justify-content-between p-3">
+                                    <div id="active-contact" class="d-flex">
+                                        <div class="my_avatar">
+                                            <img class="img-fluid rounded-circle" :src="contacts[0].avatar" :alt="contacts[0].name">
+                                        </div>
+                                        <div id="active-contact-info" class="d-flex flex-column ms-2">
+                                            <span class="fs-6 m-0">{{contacts[0].name}}</span>
+                                            <span class="text-muted">Ultimo accesso alle ore 12:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="actions text-muted">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <i class="fa-solid fa-paperclip mx-2"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                </div>
+                                <!-- contenuto principale con tutti i messaggi relativi al contatto attivo -->
                                 <div class="my_main-right-content"></div>
-                                <div class="my_right-footer"></div>
+                                <!-- sezione con spazio per la scrittura del messaggio da parte dell'utente -->
+                                <div class="my_right-footer d-flex align-items-center">
+                                    <i class="fa-regular fa-face-smile fs-5 mx-4"></i>
+                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                                    <i class="fa-solid fa-microphone fs-5 mx-4"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
