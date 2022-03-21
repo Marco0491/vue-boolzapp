@@ -1,9 +1,9 @@
-.my_top-main {
+.my_top-main-background {
     height: 15vh;
     background-color: #109687;
 }
 
-.my_bottom-main {
+.my_bottom-main-background {
     height: 85vh;
     background-color: #d9dbd5;
 }
@@ -13,4 +13,45 @@
     min-width: 500px;
     height: 95vh;
     background-color: white;
+    border: 1px solid black;
+}
+
+.my_left-content {
+    width: 35%;
+    height: 100%;
+    border-right: 1px solid #d9dbd5;
+}
+
+.my_notifications {
+    height: 10%;
+    background-color: #8edafc;
+}
+
+div.input-group {
+    background-color: #fafafa;
+}
+
+div.input-group
+span.input-group-text {
+    cursor: pointer;
+}
+
+.my_right-content {
+    width: 65%;
+    height: 100%;
+}
+
+.my_content-header {
+    height: 10%;
+    background-color: #eaeaea;
+}
+
+.my_main-right-content {
+    height: 80%;
+    background-image: url(../img/mine.jpg);
+}
+
+.my_right-footer {
+    height: 10%;
+    background-color: #f3eeea;
 }

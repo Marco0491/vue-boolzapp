@@ -16,12 +16,34 @@
     </head>
     <body>
         <main id="app" class="position-relative">
-            <div class="my_top-main"></div>
-            <div class="my_bottom-main"></div>
+            <!-- sfondo superiore posteriore alla pagina -->
+            <div class="my_top-main-background"></div>
+            <!-- sfondo posteriore -->
+            <div class="my_bottom-main-background"></div>
+            <!-- contenitore della pagina -->
             <div class="container-fluid position-absolute top-0 mt-3">
                 <div class="row">
                     <div class="offset-1 col-10">
-                        <div class="my_content"></div>
+                        <!-- contenitore per gestire la grandezza della pagina -->
+                        <div class="my_content d-flex">
+                            <!-- parte sinistra della pagina con avatar e nome dell'utente e lista dei contatti -->
+                            <div class="my_left-content">
+                                <div class="my_content-header"></div>
+                                <div class="my_notifications"></div>
+                                <div class="input-group input-group-sm p-2">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="cerca o inizia una nuova chat">
+                                </div>
+                            </div>
+                            <!-- parte destra della pagina con contatto attivo e relativa chat -->
+                            <div class="my_right-content">
+                                <div class="my_content-header"></div>
+                                <div class="my_main-right-content"></div>
+                                <div class="my_right-footer"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
