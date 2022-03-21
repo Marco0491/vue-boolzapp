@@ -1,0 +1,16 @@
+.my_top-main {
+    height: 15vh;
+    background-color: #109687;
+}
+
+.my_bottom-main {
+    height: 85vh;
+    background-color: #d9dbd5;
+}
+
+.my_content {
+    width: 80vw;
+    min-width: 500px;
+    height: 95vh;
+    background-color: white;
+}

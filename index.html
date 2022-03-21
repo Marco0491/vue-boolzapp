@@ -15,10 +15,13 @@
         <title>Vue.js BoolzApp</title>
     </head>
     <body>
-        <main id="app">
-            <div class="container-fluid">
+        <main id="app" class="position-relative">
+            <div class="my_top-main"></div>
+            <div class="my_bottom-main"></div>
+            <div class="container-fluid position-absolute top-0 mt-3">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="offset-1 col-10">
+                        <div class="my_content"></div>
                     </div>
                 </div>
             </div>
