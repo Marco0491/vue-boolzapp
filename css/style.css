@@ -129,6 +129,28 @@ div.my_main-right-content {
     background-image: url(../img/mine.jpg);
 }
 
+div.my_main-right-content
+.message-sent,.message-received {
+    font-size: 0.8rem;
+    border-radius: 0.7rem;
+}
+
+div.my_main-right-content
+.message-sent {
+    background-color: #d5f9ba;
+}
+
+div.my_main-right-content
+.message-received {
+    background-color: white;
+}
+
+div.my_main-right-content
+span.message-options {
+    font-size: 0.5rem;
+    vertical-align: bottom;
+}
+
 div.my_right-footer {
     height: 10%;
     background-color: #f3eeea;

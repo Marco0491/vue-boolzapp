@@ -1,12 +1,13 @@
 const app = new Vue({
     el: '#app',
     data: {
+        newMessageText: '',
+        activeContact: 0,
         user: {
                 name: 'Marco',
                 avatar: 'img/avatar_8.jpg',
                 visible: true
             },
-        activeContact: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -173,7 +174,23 @@ const app = new Vue({
     },
     methods: {
         chageActiveContact(contactIndex) {
-            if (this.contacts[contactIndex] !== undefined) this.activeContact = contactIndex;
+            if (this.contacts[contactIndex] !== undefined) {
+                this.activeContact = contactIndex;
+            }
+        },
+        addNewMessage(text, index) {
+            if (text.trim() != '') {
+                const newMessage = {
+                    date: '22/03/2022 16:00',
+                    message: text,
+                    status: 'sent'
+                };
+                this.contacts[index].messages.push(newMessage);
+                this.newMessageText = '';
+                console.log('elemento aggiunto');
+            } else {
+                console.log('non hai aggiunto nessun elemento')
+            }
         }
     }
 });
