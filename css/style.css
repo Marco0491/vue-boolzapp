@@ -34,7 +34,6 @@ div.my_avatar {
 }
 
 div#user span {
-    /* font-size: 0.8rem; */
     line-height: 40px;
     vertical-align: middle;
 }
@@ -72,6 +71,7 @@ div.my_notifications
 }
 
 div.input-group {
+    height: 7%;
     background-color: #fafafa;
 }
 
@@ -80,14 +80,25 @@ div.input-group
     cursor: pointer;
 }
 
+div#contact-list {
+    height: calc(100% - 27%);
+    overflow-y: auto;
+}
+
 div#contact-list
 div.my_list-element {
+    cursor: pointer;
     border-bottom: 1px solid #d9dbd5;
 }
 
 div#contact-list
-div.my_list-element:hover {
+div.my_list-element.active {
     background-color: lightgray;
+}
+
+div#contact-list
+div.my_list-element:hover {
+    background-color: #e9e6e6;
 }
 
 div#contact-list
@@ -98,6 +109,13 @@ div.my_list-element div.info {
 div#contact-list
 div.my_list-element span.time {
     font-size: 0.5rem;
+}
+div.my_active-contact {
+    display: none;
+}
+
+div.my_active-contact.active {
+    display: block;
 }
 
 div.my_content

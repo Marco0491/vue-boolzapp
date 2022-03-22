@@ -3,9 +3,10 @@ const app = new Vue({
     data: {
         user: {
                 name: 'Marco',
-                avatar: 'img/avatar_io.jpg',
+                avatar: 'img/avatar_8.jpg',
                 visible: true
             },
+        activeContact: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -171,6 +172,8 @@ const app = new Vue({
         ]
     },
     methods: {
-
+        chageActiveContact(contactIndex) {
+            if (this.contacts[contactIndex] !== undefined) this.activeContact = contactIndex;
+        }
     }
 });
