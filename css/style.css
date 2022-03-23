@@ -125,8 +125,10 @@ div.my_content
 }
 
 div.my_main-right-content {
+    width: 100%;
     height: 80%;
     background-image: url(../img/mine.jpg);
+    overflow-y: auto;
 }
 
 div.my_main-right-content
@@ -137,18 +139,31 @@ div.my_main-right-content
 
 div.my_main-right-content
 .message-sent {
+    align-self: flex-end;
     background-color: #d5f9ba;
 }
 
 div.my_main-right-content
 .message-received {
+    align-self: flex-start;
     background-color: white;
 }
 
 div.my_main-right-content
-span.message-options {
+div.message-options {
     font-size: 0.5rem;
-    vertical-align: bottom;
+}
+
+div.my_main-right-content
+div.message-options i {
+    display: none;
+    font-size: 0.7rem;
+}
+
+div.my_main-right-content
+div.message-options:hover i {
+    display: block;
+    cursor: pointer;
 }
 
 div.my_right-footer {

@@ -173,16 +173,25 @@ const app = new Vue({
         ]
     },
     methods: {
+        /**
+         * funzione per cambiare l'indice del contatto attivo
+         * @param {*} indice del contatto attivo
+         */
         chageActiveContact(contactIndex) {
             if (this.contacts[contactIndex] !== undefined) {
                 this.activeContact = contactIndex;
             }
         },
+        /**
+         * funzione per aggiungere nuovi messaggi alla lista dei messaggi del contatto attivo 
+         * @param {*} text testo del nuovo messaggio
+         * @param {*} index indice del contatto in cui inserire il nuovo messaggio
+         */
         addNewMessage(text, index) {
             if (text.trim() != '') {
                 const newMessage = {
                     date: '22/03/2022 16:00',
-                    message: text,
+                    message: text.trim(),
                     status: 'sent'
                 };
                 this.contacts[index].messages.push(newMessage);
@@ -191,6 +200,18 @@ const app = new Vue({
             } else {
                 console.log('non hai aggiunto nessun elemento')
             }
+        },
+        /**
+         * funzione per inserire un messaggio di risposta
+         * @param {*} index indice del contatto in cui inserire il messaggio di risposta
+         */
+        replyMessage(index) {
+            const reply = {
+                date: '22/03/2022 16:00',
+                message: 'ok..',
+                status: 'received'
+            };
+            this.contacts[index].messages.push(reply);
         }
     }
 });

@@ -95,18 +95,19 @@
                                     </div>
                                 </div>
                                 <!-- contenuto principale con tutti i messaggi relativi al contatto attivo -->
-                                <div class="my_main-right-content p-5">
-                                    <div v-for="(element, index) in contacts[activeContact].messages" :class="(element.status == 'sent') ? 'text-end' : 'text-start' " class="mb-3">
-                                        <span :class="(element.status == 'sent') ? 'message-sent' : 'message-received' " class="p-2">
-                                            {{element.message}}
-                                            <span class="message-options text-muted ms-4">15.30</span>
-                                        </span>
+                                <div class="my_main-right-content d-flex flex-column p-5">
+                                    <div v-for="(element, index) in contacts[activeContact].messages" :class="(element.status == 'sent') ? 'message-sent' : 'message-received' " class="message-sent d-flex p-2 mb-3">
+                                        <span>{{element.message}}</span>
+                                        <div class="message-options text-muted d-flex flex-column justify-content-end align-items-center ms-4">
+                                            <i class="fa-solid fa-angle-down mb-1"></i>
+                                            <span>15.30</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- sezione con spazio per la scrittura del messaggio da parte dell'utente -->
                                 <div class="my_right-footer d-flex align-items-center">
                                     <i class="fa-regular fa-face-smile fs-5 text-muted mx-4"></i>
-                                    <input v-model="newMessageText" @keydown.enter="addNewMessage(newMessageText, activeContact)" type="text" class="form-control" placeholder="Scrivi un messaggio">
+                                    <input v-model="newMessageText" @keydown.enter="addNewMessage(newMessageText, activeContact), replyMessage(activeContact)" type="text" class="form-control" placeholder="Scrivi un messaggio">
                                     <i class="fa-solid fa-microphone fs-5 text-muted mx-4"></i>
                                 </div>
                             </div>
