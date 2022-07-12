@@ -188,30 +188,20 @@ const app = new Vue({
          * @param {*} index indice del contatto in cui inserire il nuovo messaggio
          */
         addNewMessage(text, index) {
-            if (text.trim() != '') {
-                const newMessage = {
-                    date: '22/03/2022 16:00',
-                    message: text.trim(),
-                    status: 'sent'
-                };
-                this.contacts[index].messages.push(newMessage);
-                this.newMessageText = '';
-                console.log('elemento aggiunto');
-            } else {
-                console.log('non hai aggiunto nessun elemento')
-            }
-        },
-        /**
-         * funzione per inserire un messaggio di risposta
-         * @param {*} index indice del contatto in cui inserire il messaggio di risposta
-         */
-        replyMessage(index) {
-            const reply = {
+            const newMessage = {
                 date: '22/03/2022 16:00',
-                message: 'ok..',
-                status: 'received'
+                message: text.trim(),
+                status: 'sent'
             };
-            this.contacts[index].messages.push(reply);
+            this.contacts[index].messages.push(newMessage);
+            this.newMessageText = '';
+            setTimeout(() => {
+                this.contacts[index].messages.push({
+                    date: '22/03/2022 16:00',
+                    message: 'ok..',
+                    status: 'received'
+                });
+            }, 1000);
         }
     }
 });
